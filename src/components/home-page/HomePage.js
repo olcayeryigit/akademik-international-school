@@ -61,10 +61,10 @@ const HomePage = () => {
 
 
 
-<MainContent/>
+{/* <MainContent/>*/}
   </div>
 
-{/*  <div id="section-1">
+ <div id="section-1">
 <Section1/>
   </div>
   <div 
@@ -90,7 +90,7 @@ const HomePage = () => {
 
 
 <ExamCountdown/>
-<Reviews/>*/}
+<Reviews/>
 </div>
   )
 }
