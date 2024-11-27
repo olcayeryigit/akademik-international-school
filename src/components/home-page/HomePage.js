@@ -5,6 +5,7 @@ import { Link } from 'react-scroll';
 import MainContent from './main-content/MainContent';
 import Section1 from './section-1/Section1';
 import Section2 from './section-2/Section2';
+import Section3 from './section-3/Section3';
 
 
 const HomePage = () => {
@@ -45,8 +46,7 @@ const HomePage = () => {
         <Section2 />
       </div>
 
-  
-
+      <Section3 />
 
     
      
