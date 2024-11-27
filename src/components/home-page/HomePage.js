@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
+"use client";
 
-// `react-scroll` dinamik olarak yüklenecek ve yalnızca istemci tarafında kullanılacak
-const Link = dynamic(() => import('react-scroll').then(mod => mod.Link), { ssr: false });
-
-// `next/image` bileşeni yalnızca istemci tarafında kullanılacak şekilde dinamik yükleniyor
-const Image = dynamic(() => import('next/image'), { ssr: false });
-
+import React from 'react';
+import { Link } from 'react-scroll';
+import Image from 'next/image';
 import MainContent from './main-content/MainContent';
 import Section1 from './section-1/Section1';
 import Section2 from './section-2/Section2';
@@ -22,18 +18,6 @@ import Reviews from './reviews/Reviews';
 import Accreditation from './accreditation/Accreditation';
 
 const HomePage = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  // Yalnızca istemci tarafında çalışacak kodları `useEffect` içinde yazıyoruz.
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // İstemci tarafında sayfa render edilmeye başlandığında içerik gösterilecek.
-  if (!isClient) {
-    return null;
-  }
-
   return (
     <div className="relative">
       {/* Background Image and Gradient Overlay */}
@@ -42,7 +26,7 @@ const HomePage = () => {
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-0 w-full">
-          <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 border-b-[rgba(255,255,255,0.6)]">
+          <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 border-b-[rgba(255,255,255,0.6)]" >
             <Link
               className="absolute left-1/2 transform -translate-x-1/2 mt-6 cursor-pointer"
               to="section-1"
@@ -82,9 +66,8 @@ const HomePage = () => {
         <Image
           src="/images/home-page/71.png"
           alt="Gallery Background"
-          fill
-          objectFit="cover"
-          className="opacity-100"
+fill         
+          className="opacity-100 object-cover"
         />
         <Gallery />
       </div>
@@ -96,7 +79,7 @@ const HomePage = () => {
         <Image
           src="/images/home-page/1.jpg"
           alt="Info Section Background"
-          fill
+     fill
           objectFit="cover"
           className="opacity-20"
         />
