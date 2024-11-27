@@ -78,7 +78,7 @@ const HomePage = () => {
 <Announcements/>
 <div className="relative  pb-8">
 <img src="/images/home-page/71.png" className="absolute w-full h-full object-no-repeat object-cover object-center opacity-100  " alt="Your Image"/>
-<Gallery/></div>*/}
+<Gallery/></div>
 <News/>
 
 
@@ -90,7 +90,7 @@ const HomePage = () => {
 
 
 <ExamCountdown/>
-<Reviews/>
+<Reviews/>*/}
 </div>
   )
 }
