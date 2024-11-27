@@ -70,7 +70,7 @@ const HomePage = () => {
   <div 
   className="inset-0 bg-[url('/images/home-page/138.png')] bg-cover bg-top bg-no-repeat rounded-2xl border border-2 mx-2">  
 
-<Section2/></div>*/}
+<Section2/></div>
 <Section3/>
 
 <Clubs/>
@@ -78,7 +78,7 @@ const HomePage = () => {
 <Announcements/>
 <div className="relative  pb-8">
 <img src="/images/home-page/71.png" className="absolute w-full h-full object-no-repeat object-cover object-center opacity-100  " alt="Your Image"/>
-<Gallery/></div>
+<Gallery/></div>*/}
 <News/>
 
 
