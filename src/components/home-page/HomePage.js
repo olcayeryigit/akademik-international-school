@@ -3,7 +3,6 @@ import React from 'react'
 import MainContent from './main-content/MainContent'
 import Section1 from './section-1/Section1'
 import Section2 from './section-2/Section2'
-import Spacer from '../common/spacer/Spacer'
 import Section3 from './section-3/Section3'
 import "./home-page.scss"
 import ExamCountdown from './counter/ExamCountdown'
@@ -23,7 +22,7 @@ const HomePage = () => {
 
   return (
     <div className=" ">
-     {/*   <div className="relative main rounded-3xl mt-2 mx-3 "
+      <div className="relative main rounded-3xl mt-2 mx-3 "
    >
     
 
@@ -32,7 +31,7 @@ const HomePage = () => {
       
       />
            <div className="absolute bottom-0 w-full ">
-          <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.6)"}}>
+           <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.6)"}}>
            <Link 
   className='absolute left-1/2 transform -translate-x-1/2 mt-6 cursor-pointer'
   to="section-1"
@@ -64,7 +63,7 @@ const HomePage = () => {
 <MainContent/>
   </div>
 
- <div id="section-1">
+  <div id="section-1">
 <Section1/>
   </div>
   <div 
@@ -90,7 +89,7 @@ const HomePage = () => {
 
 
 <ExamCountdown/>
-<Reviews/>*/}
+<Reviews/>
 </div>
   )
 }
