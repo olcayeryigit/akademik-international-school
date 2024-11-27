@@ -1,0 +1,100 @@
+@import "./variables";
+@import './mixins';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.logo-button{
+    .logo2{
+    display: none;
+    }
+    
+        &:hover .logo1{
+            display: none !important;
+              }
+            
+              &:hover .logo2{
+                display: block !important;
+                  }
+    }
+    
+    
+    .logo-button2{
+      .logo1{
+      display: none;
+      }
+      
+          &:hover .logo2{
+              display: none !important;
+                }
+              
+                &:hover .logo1{
+                  display: block !important;
+                    }
+      }
+      
+      
+      /* styles.css */
+      .animated-border {
+        position: relative;
+       
+        border: 4px solid transparent; /* Başlangıçta şeffaf kenarlık */
+        background-image: linear-gradient(white, white), linear-gradient(90deg,  rgb(134, 255, 134),rgb(255, 98, 98), rgb(113, 113, 255), rgb(255, 177, 104),rgb(255, 255, 116),rgb(244, 123, 255));
+        background-clip: padding-box, border-box; /* Kenarlık ve içerik */
+        background-size: 100%, 200% 100%; /* Arka plan boyutu */
+        animation: borderMove 3s linear infinite; /* Animasyon */
+      }
+      
+      @keyframes borderMove {
+        0% {
+          background-position: 0% 0%;
+        }
+        100% {
+          background-position: 100% 0%; /* Renklerin kenar boyunca ilerlemesi */
+        }
+      }
+      
+
+      //
+      // StyledDiv.module.scss
+
+.corner-shadow {
+ 
+  background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+  filter: drop-shadow(5px -5px 35px rgba(0, 0, 0, 0.18));
+
+}
+
+.corner-shadow-2 {
+ 
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 95%);
+  filter: drop-shadow(1px -1px 1px rgba(0, 0, 0, 0.1));
+}
+
+
+.clear-text-shadow {
+  text-shadow: 0.5px 0.5px 0.5px #ffc8c8;  /* Yatay, dikey, bulanıklık, renk */
+}
+
+
+
+.dark-text-shadow {
+  text-shadow: 0.5px 0.5px 0.5px rgb(0, 0, 0);  /* Yatay, dikey, bulanıklık, renk */
+}
+
+
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%); /* Ekranın sağ dışından başlat */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); /* Ekranın ortasına kaydır */
+    opacity: 1;
+  }
+}
+
+//
+
