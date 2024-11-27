@@ -15,7 +15,6 @@ import Gallery from './gallery/Gallery'
 import News from './news/News'
 import Reviews from './reviews/Reviews'
 import Accreditation from './accreditation/Accreditation'
-import Image from 'next/image'
 import { Link } from 'react-scroll'
 
 const HomePage = () => {
@@ -27,14 +26,12 @@ const HomePage = () => {
       <div className="relative main rounded-3xl mt-2 mx-3 "
    >
     
-{/* Arka Plan Resmi */}
 <div 
         className="absolute inset-0 bg-[url('/images/common/zzz.png')] bg-cover bg-top bg-no-repeat rounded-3xl "
-        // Resmin dosya yolu
       />
            <div className="absolute bottom-0 w-full ">
-           <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.6)"}}>
-           <Link 
+            <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.6)"}}>
+         {/* <Link 
   className='absolute left-1/2 transform -translate-x-1/2 mt-6 cursor-pointer'
   to="section-1"
   smooth={true}              
@@ -50,28 +47,24 @@ const HomePage = () => {
   >
     <path fill="black" d="M1.5 1L0 2.5l4 4l4-4L6.5 1L4 3.5z"/>
   </svg>
-</Link>
+</Link>*/}
 
           
                    </div>
 
             </div> 
         
-      {/* Overlay */}
       <div className="absolute inset-0  bg-gradient-to-b from-black/100 via-black/80  via-black/75 via-black/70 via-black/65 via-[#0D121D]/90 via-[#101525]/70 to-yellow-700/20 rounded-3xl " /> 
 
-   { /*  <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-800  opacity-80"></div>
-<div className="absolute inset-0  bg-gradient-to-b from-black/100 via-black/80 via-black/70 via-black]/60 to-[#885E1D]/30 " /> 
-   <div className="absolute inset-0  bg-gradient-to-b from-black/100 via-[#0A0F19]/95 via-[#0D121D]/80 via-[#101525]/70 to-[#8E601B]/30 " /> 
-*/}
+
   
 
 <MainContent/>
   </div>
 
-  <div id="section-1">
+{/*  <div id="section-1">
 <Section1/>
-  </div>
+  </div>*/}
   <div 
   className="inset-0 bg-[url('/images/home-page/138.png')] bg-cover bg-top bg-no-repeat rounded-2xl border border-2 mx-2">  
 
