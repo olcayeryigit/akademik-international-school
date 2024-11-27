@@ -80,8 +80,8 @@ fill
           src="/images/home-page/1.jpg"
           alt="Info Section Background"
      fill
-          objectFit="cover"
-          className="opacity-20"
+         
+          className="opacity-20 object-cover"
         />
         <InfoSection />
       </div>
