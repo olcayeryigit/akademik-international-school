@@ -1,5 +1,6 @@
 "use client";
 import ImageBanner from "@/components/common/image-banner/ImageBanner";
+import Image from "next/image";
 import React from "react";
 
 const Announcements = () => {
@@ -63,12 +64,13 @@ const Announcements = () => {
                     <div
                         key={index}
                         className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center text-center"
-                    >
-                        <img
+                    ><div className="relative h-40 w-full">
+                        <Image
                             src={duyuru.resim}
                             alt={`${duyuru.baslik} resmi`}
-                            className="h-40 w-full object-cover mb-4 rounded-lg"
-                        />
+                            fill
+                            className=" object-cover mb-4 rounded-lg"
+                        /></div>
                         <h3 className="text-xl font-semibold text-blue-800 mb-2">
                             {duyuru.baslik}
                         </h3>

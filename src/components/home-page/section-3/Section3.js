@@ -93,11 +93,13 @@ const Section3 = () => {
                   className="object-cover rounded-lg"
                 />
 
-                <img
+<div className="relative w-full h-full ">
+                <Image
                   src="/images/home-page/section-3/bg7.png"
                   alt="Overlay Görsel"
-                  className="absolute w-full h-full opacity-90 rounded-lg"
-                />
+                  fill
+                  className=" opacity-90 rounded-lg"
+                /></div>
    <div className="absolute inset-0  bg-gradient-to-b from-blue-900/50 to-yellow-700/50 rounded-lg" /> 
 
                 <div

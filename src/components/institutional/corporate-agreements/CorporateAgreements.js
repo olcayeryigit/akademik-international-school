@@ -1,5 +1,6 @@
 "use client";
 import ImageBanner from "@/components/common/image-banner/ImageBanner";
+import Image from "next/image";
 import React from "react";
 
 const CorporateAgreements = () => {
@@ -98,11 +99,13 @@ const CorporateAgreements = () => {
                         key={index}
                         className="bg-white shadow-lg rounded-lg p-4 flex flex-col items-center text-center"
                     >
-                        <img
+                      <div className="relative w-full h-20 mb-4">
+                        <Image
                             src={anlasma.resim}
                             alt={`${anlasma.kurum} logo`}
-                            className="h-20 object-contain mb-4"
-                        />
+                            className=" object-contain "
+                            fill
+                        /></div>
                         <h3 className="text-xl font-semibold text-blue-800 mb-2">
                             {anlasma.kurum}
                         </h3>

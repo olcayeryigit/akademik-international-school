@@ -44,7 +44,7 @@ yetkinlik kazandırmayı, liderlik becerilerini geliştirmeyi ve toplumsal sorum
             <Link
               href={link.href}
               key={index}
-              className={`relative overflow-hidden rounded-2xl  transition-transform duration-300 group  h-52  ${link.color}`}
+              className={`relative overflow-hidden rounded-2xl  transition-transform duration-300 group  h-52   ${link.color}`}
             >
               <img src="/images/bg-9.png" className="absolute w-full h-full object-cover z-50" alt="Your Image"/>
               <div className="relative flex flex-col items-center justify-center h-full p-4 text-center ">

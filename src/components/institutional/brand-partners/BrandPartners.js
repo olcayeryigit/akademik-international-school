@@ -1,5 +1,6 @@
 "use client";
 import ImageBanner from "@/components/common/image-banner/ImageBanner";
+import Image from "next/image";
 import React from "react";
 
 const BrandPartners= () => {
@@ -34,11 +35,15 @@ const BrandPartners= () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {logos.map((logo, index) => (
           <div key={index} className="flex justify-center items-center">
-            <img
+            <div className="relative w-16 h-16 ">
+
+           
+            <Image
               src="/images/logos/ak-1.png"
               alt={`Marka ${index + 1}`}
-              className="h-16 object-contain"
-            />
+              fill
+              className="object-contain"
+            /> </div>
           </div>
         ))}
  </div>
