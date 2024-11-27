@@ -64,14 +64,14 @@ const HomePage = () => {
 <MainContent/>
   </div>
 
-  <div id="section-1">
+{/*  <div id="section-1">
 <Section1/>
   </div>
   <div 
   className="inset-0 bg-[url('/images/home-page/138.png')] bg-cover bg-top bg-no-repeat rounded-2xl border border-2 mx-2">  
 
 <Section2/></div>
-{/*<Section3/>
+<Section3/>
 
 <Clubs/>
 <ForeignLanguage/>
