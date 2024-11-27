@@ -23,7 +23,7 @@ const HomePage = () => {
 
   return (
     <div className=" ">
-      <div className="relative main rounded-3xl mt-2 mx-3 "
+     {/*   <div className="relative main rounded-3xl mt-2 mx-3 "
    >
     
 
@@ -32,7 +32,7 @@ const HomePage = () => {
       
       />
            <div className="absolute bottom-0 w-full ">
-           <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.6)"}}>
+          <div className="hidden md:block absolute bottom-0 left-1/2 transform -translate-x-1/2  w-0  h-0 border-l-[60px] border-r-[60px] border-b-[60px] border-l-transparent border-r-transparent z-50 " style={{borderBottomColor:"rgba(255,255,255,0.6)"}}>
            <Link 
   className='absolute left-1/2 transform -translate-x-1/2 mt-6 cursor-pointer'
   to="section-1"
@@ -61,12 +61,12 @@ const HomePage = () => {
 
 
 
-{/* <MainContent/>*/}
+<MainContent/>
   </div>
 
  <div id="section-1">
 <Section1/>
-  </div>
+  </div>*/}
   <div 
   className="inset-0 bg-[url('/images/home-page/138.png')] bg-cover bg-top bg-no-repeat rounded-2xl border border-2 mx-2">  
 
