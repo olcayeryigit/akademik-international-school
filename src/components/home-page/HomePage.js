@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import MainContent from './main-content/MainContent';
 import Section1 from './section-1/Section1';
+import Section2 from './section-2/Section2';
 
 
 const HomePage = () => {
@@ -40,7 +41,10 @@ const HomePage = () => {
         <Section1 />
       </div>
 
-    
+      <div className="mx-2 rounded-2xl border-2 bg-cover bg-no-repeat bg-[url('/images/home-page/138.png')]">
+        <Section2 />
+      </div>
+
   
 
 
