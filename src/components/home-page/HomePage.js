@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import MainContent from './main-content/MainContent'
 import Section1 from './section-1/Section1'
