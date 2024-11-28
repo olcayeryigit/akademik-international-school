@@ -48,7 +48,7 @@ const Announcements = () => {
     return input.replace(/-/g, '/');
   }
 
-  useEffect(() => {
+  useEffect,(() => {
     const interval = setInterval(() => {
       setHighlightedIndex(prevIndex => {
         const nextIndex = prevIndex + 1;
