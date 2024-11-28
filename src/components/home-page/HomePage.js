@@ -61,16 +61,8 @@ const HomePage = () => {
       <ForeignLanguage />
 
      
-      {/* Gallery Section */}
-      <div className="relative pb-8 w-full h-full">
-        <Image
-          src="/images/home-page/71.png"
-          alt="Gallery Background"
-fill         
-          className="opacity-100 object-cover"
-        />
-        <Gallery />
-      </div>
+     
+       
 
     
      
