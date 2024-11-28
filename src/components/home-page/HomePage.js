@@ -1,13 +1,11 @@
 "use client";
-
 import React from 'react';
 import { Link } from 'react-scroll';
 import MainContent from './main-content/MainContent';
 import Section1 from './section-1/Section1';
 import Section2 from './section-2/Section2';
 import Section3 from './section-3/Section3';
-import Clubs from './clubs/Clubs';
-import ForeignLanguage from './foreign-language/ForeignLanguage';
+
 
 
 
@@ -50,8 +48,7 @@ const HomePage = () => {
       </div>
 
       <Section3 />
-      <Clubs />
-      <ForeignLanguage />
+    
 
      
      
