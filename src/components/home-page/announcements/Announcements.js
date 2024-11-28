@@ -1,11 +1,9 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import "./announcements.scss";
-import Image from "next/image";
 import SectionTitle from "@/components/common/SectionTitle";
+
 
 const announcements = [
   { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22/10/2024 tarihinde başlıyor." },
@@ -26,7 +24,15 @@ const Announcements = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const announcementsPerPage = 3;
+  const [isClient, setIsClient] = useState(false);
 
+  useEffect(() => {
+    setIsClient(true); // İlk renderdan sonra istemci tarafında olduğunu belirtiyoruz
+  }, []);
+
+  if (!isClient) {
+    return null; // Sunucuda render edilmesin
+  }
   const markedDates = announcements.map(announcement => new Date(convertDateFormat(announcement.date)));
   const indexOfLastAnnouncement = (currentPage + 1) * announcementsPerPage;
   const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
