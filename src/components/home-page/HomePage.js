@@ -8,6 +8,13 @@ import Section3 from './section-3/Section3';
 import Clubs from './clubs/Clubs';
 import ForeignLanguage from './foreign-language/ForeignLanguage';
 import Announcements from './announcements/Announcements';
+import Image from 'next/image';
+import Gallery from './gallery/Gallery';
+import News from './news/News';
+import InfoSection from './info-section/InfoSection';
+import Accreditation from './accreditation/Accreditation';
+import ExamCountdown from './counter/ExamCountdown';
+import Reviews from './reviews/Reviews';
 
 
 
@@ -57,7 +64,35 @@ const HomePage = () => {
       <ForeignLanguage />
       <Announcements />
 
-    
+    {/* Gallery Section */}
+    <div className="relative pb-8 w-full h-full">
+        <Image
+          src="/images/home-page/71.png"
+          alt="Gallery Background"
+fill         
+          className="opacity-100 object-cover"
+        />
+        <Gallery />
+      </div>
+
+      <News />
+
+      {/* Info Section */}
+      <div className="relative pb-8 w-full h-full">
+        <Image
+          src="/images/home-page/1.jpg"
+          alt="Info Section Background"
+     fill
+         
+          className="opacity-20 object-cover"
+        />
+        <InfoSection />
+      </div>
+
+      <Accreditation />
+      <ExamCountdown />
+      <Reviews />
+
      
     
 
