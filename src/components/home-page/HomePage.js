@@ -7,6 +7,7 @@ import Section2 from './section-2/Section2';
 import Section3 from './section-3/Section3';
 import Clubs from './clubs/Clubs';
 import ForeignLanguage from './foreign-language/ForeignLanguage';
+import Announcements from './announcements/Announcements';
 
 
 
@@ -54,7 +55,7 @@ const HomePage = () => {
       <Clubs />
      
       <ForeignLanguage />
-       
+      <Announcements />
 
     
      
