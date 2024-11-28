@@ -4,7 +4,6 @@ import 'react-calendar/dist/Calendar.css';
 import "./announcements.scss";
 import SectionTitle from "@/components/common/SectionTitle";
 
-
 const announcements = [
   { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22/10/2024 tarihinde başlıyor." },
   { title: "Okul Spor Etkinliği", date: "01-11-2024", description: "01/11/2024 tarihinde düzenlenecek olan okul spor etkinliğine bekliyoruz." },
@@ -27,12 +26,14 @@ const Announcements = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true); // İlk renderdan sonra istemci tarafında olduğunu belirtiyoruz
+    setIsClient(true); // İstemci tarafında olduğumuzu belirtiyoruz
   }, []);
 
+  // isClient kontrolü ile component render etme
   if (!isClient) {
     return null; // Sunucuda render edilmesin
   }
+
   const markedDates = announcements.map(announcement => new Date(convertDateFormat(announcement.date)));
   const indexOfLastAnnouncement = (currentPage + 1) * announcementsPerPage;
   const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
@@ -46,7 +47,6 @@ const Announcements = () => {
   function replaceDashWithSlash(input) {
     return input.replace(/-/g, '/');
   }
-  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,37 +60,23 @@ const Announcements = () => {
   }, [currentAnnouncements.length]);
 
   return (
-  <div className="relative  px-5 lg:px-24 py-24 ">
-  
-
-      <div className="announcement-container container mx-auto  ">
-
-      <SectionTitle
-            title="Akademik Koleji Duyurular"
-            position="text-center"
-            />
-
-
-   
-        
-        <div className="relative bg-[url('/images/9.png')] bg-cover bg-top bg-no-repeat flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px]  mt-10">
-    
-        <div className="absolute inset-0 bg-gradient-to-t from-red-500 to-blue-500  opacity-10 z-0"></div>
-          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#bdc5d4] bg-opacity-20 z-50 ">
+    <div className="relative px-5 lg:px-24 py-24">
+      <div className="announcement-container container mx-auto">
+        <SectionTitle title="Akademik Koleji Duyurular" position="text-center" />
+        <div className="relative bg-[url('/images/9.png')] bg-cover bg-top bg-no-repeat flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px] mt-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-red-500 to-blue-500 opacity-10 z-0"></div>
+          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#bdc5d4] bg-opacity-20 z-50">
             <div className="text-center mb-6 flex justify-center gap-2">
-         
-          
               <div className="flex flex-col gap-2">
-               <div className="text-5xl font-semibold">{formattedDay}</div>
-              <div className="text-2xl text-gray-600">{formattedMonth}</div>
-              <div className="text-2xl text-gray-600">{formattedYear}</div>  
+                <div className="text-5xl font-semibold">{formattedDay}</div>
+                <div className="text-2xl text-gray-600">{formattedMonth}</div>
+                <div className="text-2xl text-gray-600">{formattedYear}</div>
               </div>
-             
             </div>
 
             {currentAnnouncements.map((announcement, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`flex flex-col p-4 mb-4 rounded-lg transition duration-300 h-28 bg-white
                             ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}
               >
@@ -101,17 +87,17 @@ const Announcements = () => {
             ))}
 
             <div className="flex justify-center gap-2 mt-4">
-              <button 
-                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} 
-                disabled={currentPage === 0} 
+              <button
+                onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))}
+                disabled={currentPage === 0}
                 className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white
                             ${currentPage === 0 ? "bg-opacity-80" : "bg-opacity-50"}`}
               >
               </button>
-              <button 
-                onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(announcements.length / announcementsPerPage) - 1))} 
-                disabled={currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1} 
-                className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white 
+              <button
+                onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(announcements.length / announcementsPerPage) - 1))}
+                disabled={currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1}
+                className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white
                             ${currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1 ? "bg-opacity-80" : "bg-opacity-50"}`}
               >
               </button>
@@ -119,19 +105,18 @@ const Announcements = () => {
           </div>
 
           <div className="calendar-column lg:col-span-3 border-l border-gray-100 z-50 bg-[#bdc5d4] bg-opacity-20">
-            <Calendar 
-
-              locale="tr-TR" 
+            <Calendar
+              locale="tr-TR"
               tileClassName={({ date }) => {
-                return markedDates.some(markedDate => 
+                return markedDates.some(markedDate =>
                   markedDate.getFullYear() === date.getFullYear() &&
                   markedDate.getMonth() === date.getMonth() &&
                   markedDate.getDate() === date.getDate()
-                ) ? 'highlight' : null; 
+                ) ? 'highlight' : null;
               }}
-              onChange={setValue} 
-              value={value} 
-              className="border-l w-full h-full p-8 pt-0  md:px-20 flex flex-col mt-0 md:mt-8"
+              onChange={setValue}
+              value={value}
+              className="border-l w-full h-full p-8 pt-0 md:px-20 flex flex-col mt-0 md:mt-8"
             />
           </div>
         </div>
@@ -141,6 +126,7 @@ const Announcements = () => {
 };
 
 export default Announcements;
+
 
 /*
 <div className="absolute inset-0 bg-[url('/bg-2/87.png')] bg-cover bg-top bg-no-repeat opacity-50 ounded-3xl "/>*/
