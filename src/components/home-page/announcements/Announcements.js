@@ -3,22 +3,47 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import "./announcements.scss";
-import 'react-calendar/dist/Calendar.css';
 import Image from "next/image";
 import SectionTitle from "@/components/common/SectionTitle";
 
-// react-calendar dinamik olarak yükleniyor (SSR devre dışı)
+// React-Calendar dinamik olarak yükleniyor (SSR devre dışı)
 const Calendar = dynamic(() => import("react-calendar"), { ssr: false });
 
+// Duyuru verileri
 const announcements = [
-  { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22/10/2024 tarihinde başlıyor." },
-  { title: "Okul Spor Etkinliği", date: "01-11-2024", description: "01/11/2024 tarihinde düzenlenecek olan okul spor etkinliğine bekliyoruz." },
-  { title: "Mezuniyet Töreni", date: "15-12-2024", description: "15-12-2024 tarihinde gerçekleşecek olan Mezuniyet töreni için hazırlıklara başlandı." },
-  { title: "Kariyer Günü Etkinliği", date: "10-11-2024", description: "10/11/2024 tarihinde gerçekleşecek Kariyer günü etkinliğimizde birçok sektör temsilcisi yer alacak." },
-  { title: "Yazılım Atölyesi", date: "05-12-2024", description: "Yazılım alanında uzmanların katılacağı atölyeler 05/12/2024 tarihinde başlıyor." },
-  { title: "STEM Proje Yarışması", date: "20-01-2025", description: "Öğrencilerin STEM projelerini sergileyeceği yarışma 20/01/2025 tarihinde gerçekleşecek." },
+  {
+    title: "Yeni Eğitim Programı Başlıyor",
+    date: "22-10-2024",
+    description: "Yeni eğitim programımız 22/10/2024 tarihinde başlıyor.",
+  },
+  {
+    title: "Okul Spor Etkinliği",
+    date: "01-11-2024",
+    description: "01/11/2024 tarihinde düzenlenecek olan okul spor etkinliğine bekliyoruz.",
+  },
+  {
+    title: "Mezuniyet Töreni",
+    date: "15-12-2024",
+    description: "15-12-2024 tarihinde gerçekleşecek olan Mezuniyet töreni için hazırlıklara başlandı.",
+  },
+  {
+    title: "Kariyer Günü Etkinliği",
+    date: "10-11-2024",
+    description: "10/11/2024 tarihinde gerçekleşecek Kariyer günü etkinliğimizde birçok sektör temsilcisi yer alacak.",
+  },
+  {
+    title: "Yazılım Atölyesi",
+    date: "05-12-2024",
+    description: "Yazılım alanında uzmanların katılacağı atölyeler 05/12/2024 tarihinde başlıyor.",
+  },
+  {
+    title: "STEM Proje Yarışması",
+    date: "20-01-2025",
+    description: "Öğrencilerin STEM projelerini sergileyeceği yarışma 20/01/2025 tarihinde gerçekleşecek.",
+  },
 ];
 
+// Tarih formatını dönüştürme fonksiyonu
 function convertDateFormat(dateString) {
   const [day, month, year] = dateString.split("-");
   return `${year}.${month}.${day}`;
@@ -30,22 +55,28 @@ const Announcements = () => {
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const announcementsPerPage = 3;
 
+  // İşaretlenecek tarihler
   const markedDates = announcements.map((announcement) =>
     new Date(convertDateFormat(announcement.date))
   );
+
+  // Sayfalama için duyurular
   const indexOfLastAnnouncement = (currentPage + 1) * announcementsPerPage;
   const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
   const currentAnnouncements = announcements.slice(indexOfFirstAnnouncement, indexOfLastAnnouncement);
 
+  // Bugünün tarih bilgileri
   const today = new Date();
   const formattedDay = today.getDate();
   const formattedMonth = today.toLocaleString("tr-TR", { month: "long" });
   const formattedYear = today.getFullYear();
 
+  // Tarih formatını değiştirme (örn: "-" yerine "/")
   function replaceDashWithSlash(input) {
     return input.replace(/-/g, "/");
   }
 
+  // Otomatik vurgulama değişimi
   useEffect(() => {
     const interval = setInterval(() => {
       setHighlightedIndex((prevIndex) => {
@@ -133,7 +164,3 @@ const Announcements = () => {
 };
 
 export default Announcements;
-
-
-/*
-<div className="absolute inset-0 bg-[url('/bg-2/87.png')] bg-cover bg-top bg-no-repeat opacity-50 ounded-3xl "/>*/
