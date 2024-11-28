@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import "./announcements.scss";
+import 'react-calendar/dist/Calendar.css';
 import Image from "next/image";
 import SectionTitle from "@/components/common/SectionTitle";
 
