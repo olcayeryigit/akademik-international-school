@@ -4,7 +4,7 @@ import 'react-calendar/dist/Calendar.css';
 import "./announcements.scss";
 import SectionTitle from "@/components/common/SectionTitle";
 
-// Dinamik olarak sadece istemci tarafında yükle
+// Dinamik olarak yalnızca istemci tarafında yükle
 const Calendar = dynamic(() => import("react-calendar"), { ssr: false });
 
 const announcements = [
