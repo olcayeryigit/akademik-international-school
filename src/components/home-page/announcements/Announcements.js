@@ -1,12 +1,10 @@
-"use client";  // Tarayıcı tarafında çalışmasını sağla
-
 import React, { useState, useEffect } from "react";
-import dynamic from "next/dynamic"; // Dinamik içe aktarma
+import dynamic from "next/dynamic";
 import 'react-calendar/dist/Calendar.css';
 import "./announcements.scss";
 import SectionTitle from "@/components/common/SectionTitle";
 
-// Dinamik içe aktarma ile Calendar bileşenini yalnızca istemci tarafında yükleyin
+// Dinamik olarak sadece istemci tarafında yükle
 const Calendar = dynamic(() => import("react-calendar"), { ssr: false });
 
 const announcements = [
@@ -74,7 +72,8 @@ const Announcements = () => {
               <div 
                 key={index} 
                 className={`flex flex-col p-4 mb-4 rounded-lg transition duration-300 h-28 bg-white
-                            ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}>
+                            ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}
+              >
                 <div className="font-semibold text-md">{announcement.title}</div>
                 <p className="text-sm text-gray-700">{announcement.description}</p>
                 <span className="text-xs text-gray-500">{replaceDashWithSlash(announcement.date)}</span>
@@ -86,15 +85,15 @@ const Announcements = () => {
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))} 
                 disabled={currentPage === 0} 
                 className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white
-                            ${currentPage === 0 ? "bg-opacity-80" : "bg-opacity-50"}`}
-              >
+                            ${currentPage === 0 ? "bg-opacity-80" : "bg-opacity-50"}`}>
+                {"<"}
               </button>
               <button 
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(announcements.length / announcementsPerPage) - 1))} 
                 disabled={currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1} 
                 className={`text-sm w-8 h-2 rounded-md transition duration-300 bg-white 
-                            ${currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1 ? "bg-opacity-80" : "bg-opacity-50"}`}
-              >
+                            ${currentPage >= Math.ceil(announcements.length / announcementsPerPage) - 1 ? "bg-opacity-80" : "bg-opacity-50"}`}>
+                {">"}
               </button>
             </div>
           </div>
@@ -121,6 +120,7 @@ const Announcements = () => {
 };
 
 export default Announcements;
+
 
 
 
