@@ -72,24 +72,7 @@ fill
         <Gallery />
       </div>
 
-      <News />
-
-      {/* Info Section */}
-      <div className="relative pb-8 w-full h-full">
-        <Image
-          src="/images/home-page/1.jpg"
-          alt="Info Section Background"
-     fill
-         
-          className="opacity-20 object-cover"
-        />
-        <InfoSection />
-      </div>
-
-      <Accreditation />
-      <ExamCountdown />
-      <Reviews />
-
+    
      
     
 
