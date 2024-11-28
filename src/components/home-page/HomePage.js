@@ -8,14 +8,7 @@ import Section2 from './section-2/Section2';
 import Section3 from './section-3/Section3';
 import Clubs from './clubs/Clubs';
 import ForeignLanguage from './foreign-language/ForeignLanguage';
-import Announcements from './announcements/Announcements';
-import InfoSection from './info-section/InfoSection';
-import Image from 'next/image';
-import News from './news/News';
-import Gallery from './gallery/Gallery';
-import Accreditation from './accreditation/Accreditation';
-import ExamCountdown from './counter/ExamCountdown';
-import Reviews from './reviews/Reviews';
+
 
 
 const HomePage = () => {
