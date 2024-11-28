@@ -1,4 +1,4 @@
-"use client";
+"use client";  // Tarayıcı tarafında çalışmasını sağla
 
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic"; // Dinamik içe aktarma
@@ -74,8 +74,7 @@ const Announcements = () => {
               <div 
                 key={index} 
                 className={`flex flex-col p-4 mb-4 rounded-lg transition duration-300 h-28 bg-white
-                            ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}
-              >
+                            ${highlightedIndex === index ? "bg-opacity-80" : "bg-opacity-50"}`}>
                 <div className="font-semibold text-md">{announcement.title}</div>
                 <p className="text-sm text-gray-700">{announcement.description}</p>
                 <span className="text-xs text-gray-500">{replaceDashWithSlash(announcement.date)}</span>
@@ -122,6 +121,7 @@ const Announcements = () => {
 };
 
 export default Announcements;
+
 
 
 /*
