@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import 'react-calendar/dist/Calendar.css';
 import "./announcements.scss";
@@ -25,6 +25,7 @@ const Announcements = () => {
   const [value, setValue] = useState(new Date());
   const [currentPage, setCurrentPage] = useState(0);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
+  const [isCalendarReady, setIsCalendarReady] = useState(false); // State to track when calendar is ready
   const announcementsPerPage = 3;
 
   const markedDates = announcements.map(announcement => new Date(convertDateFormat(announcement.date)));
@@ -40,6 +41,13 @@ const Announcements = () => {
   function replaceDashWithSlash(input) {
     return input.replace(/-/g, '/');
   }
+
+  useEffect(() => {
+    // We are only enabling the calendar once the component is mounted on the client side
+    if (typeof window !== "undefined") {
+      setIsCalendarReady(true);
+    }
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -99,19 +107,21 @@ const Announcements = () => {
           </div>
 
           <div className="calendar-column lg:col-span-3 border-l border-gray-100 z-50 bg-[#bdc5d4] bg-opacity-20">
-            <Calendar
-              locale="tr-TR" 
-              tileClassName={({ date }) => {
-                return markedDates.some(markedDate => 
-                  markedDate.getFullYear() === date.getFullYear() &&
-                  markedDate.getMonth() === date.getMonth() &&
-                  markedDate.getDate() === date.getDate()
-                ) ? 'highlight' : null; 
-              }}
-              onChange={setValue} 
-              value={value} 
-              className="border-l w-full h-full p-8 pt-0 md:px-20 flex flex-col mt-0 md:mt-8"
-            />
+            {isCalendarReady && (
+              <Calendar
+                locale="tr-TR" 
+                tileClassName={({ date }) => {
+                  return markedDates.some(markedDate => 
+                    markedDate.getFullYear() === date.getFullYear() &&
+                    markedDate.getMonth() === date.getMonth() &&
+                    markedDate.getDate() === date.getDate()
+                  ) ? 'highlight' : null; 
+                }}
+                onChange={setValue} 
+                value={value} 
+                className="border-l w-full h-full p-8 pt-0 md:px-20 flex flex-col mt-0 md:mt-8"
+              />
+            )}
           </div>
         </div>
       </div>
@@ -120,6 +130,7 @@ const Announcements = () => {
 };
 
 export default Announcements;
+
 
 
 
