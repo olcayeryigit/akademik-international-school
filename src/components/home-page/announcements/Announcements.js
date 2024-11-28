@@ -1,10 +1,9 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import "./announcements.scss";
 import SectionTitle from "@/components/common/SectionTitle";
+
 
 const announcements = [
   { title: "Yeni Eğitim Programı Başlıyor", date: "22-10-2024", description: "Yeni eğitim programımız 22/10/2024 tarihinde başlıyor." },
@@ -24,9 +23,17 @@ const Announcements = () => {
   const [value, setValue] = useState(new Date());
   const [currentPage, setCurrentPage] = useState(0);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
-  const [markedDates, setMarkedDates] = useState([]);
   const announcementsPerPage = 3;
+  const [isClient, setIsClient] = useState(false);
 
+  useEffect(() => {
+    setIsClient(true); // İlk renderdan sonra istemci tarafında olduğunu belirtiyoruz
+  }, []);
+
+  if (!isClient) {
+    return null; // Sunucuda render edilmesin
+  }
+  const markedDates = announcements.map(announcement => new Date(convertDateFormat(announcement.date)));
   const indexOfLastAnnouncement = (currentPage + 1) * announcementsPerPage;
   const indexOfFirstAnnouncement = indexOfLastAnnouncement - announcementsPerPage;
   const currentAnnouncements = announcements.slice(indexOfFirstAnnouncement, indexOfLastAnnouncement);
@@ -39,6 +46,7 @@ const Announcements = () => {
   function replaceDashWithSlash(input) {
     return input.replace(/-/g, '/');
   }
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,29 +59,33 @@ const Announcements = () => {
     return () => clearInterval(interval);
   }, [currentAnnouncements.length]);
 
-  useEffect(() => {
-    // Bu işlemi yalnızca istemci tarafında yapmalısınız
-    const markedDatesArray = announcements.map(announcement => {
-      const [day, month, year] = announcement.date.split("-");
-      return new Date(year, month - 1, day); // JavaScript'te aylar 0'dan başlar
-    });
-    setMarkedDates(markedDatesArray);
-  }, []);
-
   return (
-    <div className="relative px-5 lg:px-24 py-24">
-      <div className="announcement-container container mx-auto">
-        <SectionTitle title="Akademik Koleji Duyurular" position="text-center" />
+  <div className="relative  px-5 lg:px-24 py-24 ">
+  
 
-        <div className="relative bg-[url('/images/9.png')] bg-cover bg-top bg-no-repeat flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px] mt-10">
-          <div className="absolute inset-0 bg-gradient-to-t from-red-500 to-blue-500 opacity-10 z-0"></div>
-          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#bdc5d4] bg-opacity-20 z-50">
+      <div className="announcement-container container mx-auto  ">
+
+      <SectionTitle
+            title="Akademik Koleji Duyurular"
+            position="text-center"
+            />
+
+
+   
+        
+        <div className="relative bg-[url('/images/9.png')] bg-cover bg-top bg-no-repeat flex flex-col grid grid-cols-1 lg:grid-cols-5 shadow-lg mx-auto rounded-lg overflow-hidden bg-white max-w-[1200px]  mt-10">
+    
+        <div className="absolute inset-0 bg-gradient-to-t from-red-500 to-blue-500  opacity-10 z-0"></div>
+          <div className="lg:col-span-2 announcements-column flex flex-col p-6 text-gray-800 bg-[#bdc5d4] bg-opacity-20 z-50 ">
             <div className="text-center mb-6 flex justify-center gap-2">
+         
+          
               <div className="flex flex-col gap-2">
-                <div className="text-5xl font-semibold">{formattedDay}</div>
-                <div className="text-2xl text-gray-600">{formattedMonth}</div>
-                <div className="text-2xl text-gray-600">{formattedYear}</div>
+               <div className="text-5xl font-semibold">{formattedDay}</div>
+              <div className="text-2xl text-gray-600">{formattedMonth}</div>
+              <div className="text-2xl text-gray-600">{formattedYear}</div>  
               </div>
+             
             </div>
 
             {currentAnnouncements.map((announcement, index) => (
@@ -107,18 +119,19 @@ const Announcements = () => {
           </div>
 
           <div className="calendar-column lg:col-span-3 border-l border-gray-100 z-50 bg-[#bdc5d4] bg-opacity-20">
-            <Calendar
-              locale="tr-TR"
+            <Calendar 
+
+              locale="tr-TR" 
               tileClassName={({ date }) => {
                 return markedDates.some(markedDate => 
                   markedDate.getFullYear() === date.getFullYear() &&
                   markedDate.getMonth() === date.getMonth() &&
                   markedDate.getDate() === date.getDate()
-                ) ? 'highlight' : null;
+                ) ? 'highlight' : null; 
               }}
               onChange={setValue} 
               value={value} 
-              className="border-l w-full h-full p-8 pt-0 md:px-20 flex flex-col mt-0 md:mt-8"
+              className="border-l w-full h-full p-8 pt-0  md:px-20 flex flex-col mt-0 md:mt-8"
             />
           </div>
         </div>
@@ -128,3 +141,6 @@ const Announcements = () => {
 };
 
 export default Announcements;
+
+/*
+<div className="absolute inset-0 bg-[url('/bg-2/87.png')] bg-cover bg-top bg-no-repeat opacity-50 ounded-3xl "/>*/
