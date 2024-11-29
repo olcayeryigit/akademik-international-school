@@ -5,6 +5,7 @@ import 'swiper/css';
 import ReviewCard from './ReviewCard';
 import SectionTitle from '@/components/common/SectionTitle';
 import SectionDescription from '@/components/common/SectionDescription';
+import Image from 'next/image';
 
 const reviews = [
   {
@@ -43,8 +44,8 @@ const reviews = [
 
 const Reviews= () => {
   return (
-    <div className=" px-10 py-20">
-    <div className="relative bg-[url('/images/home-page/bgg.png')] bg-cover  bg-top bg-no-repeat rounded-xl py-10 border-8 border-white shadow-lg "> 
+    <div className="relative px-10 py-20 bg-[url('/images/bg1.png')] bg-cover bg-no-repeat bg-top rounded-t-3xl ">
+    <div className="relative rounded-xl py-10  "> 
 
    
 

@@ -83,15 +83,15 @@ const Footer = () => {
   }, [currentPathname]); // Re-run when pathname changes
 
   return (
-    <div className="footer relative  text-white relative bg-[url('/images/common/zzz.png')] bg-cover bg-top bg-no-repeat ">
+    <div className="footer relative  text-white relative bg-[url('/images/main.jpg')] bg-cover bg-top bg-no-repeat ">
         <div className={`  absolute top-0 right-0 w-1/2 h-20 ${backgroundClass} rounded-br-[130%] transform scale-x-[-1] z-40`}></div>
 
     <div className={`absolute top-0 left-0 w-1/2 h-20 ${backgroundClass}  rounded-br-[130%] z-40`}></div>
 
 
 
-        <div className='absolute -top-10 left-1/2 transform -translate-x-1/2 w-1/2 w-24 h-36 z-50'>
-<Image src="/images/logos/main-1.svg" fill className='object-cover' alt='x'/>
+        <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 w-1/2 w-36 h-44 z-50'>
+<Image src="/images/kolej-gif.gif" fill className='object-contain' alt='x'/>
 </div>
 
 

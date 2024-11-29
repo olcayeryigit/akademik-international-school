@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const ReviewCard = ({ comment, name, title }) => {
     return (
-      <div className="relative  h-52 flex flex-col justify-center gap-2 px-6 rounded-3xl shadow bg-white bg-opacity-80 ">
+      <div className="relative  h-52 flex flex-col justify-center gap-2 px-6 rounded-3xl shadow bg-indigo-50 bg-opacity-50 ">
           <Image
             className="absolute -top-4 right-10 opacity-50"
             src="/images/home-page/mark.svg"
