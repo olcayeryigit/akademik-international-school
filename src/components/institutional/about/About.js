@@ -7,11 +7,12 @@ const About = () => {
   return (
     <div className=" bg-gradient-to-t from-white to-gray-50">
        <ImageBanner 
-        src="/images/9.png"
+        src="/images/bg3.png"
         title="Kurumsal"
         subTitle="Hakkımızda
 " 
-        objectClass="object-top"
+bg='bg-black/65'
+        objectClass="object-bottom"
       />
       {/* Background with Gradient Overlay */}
   

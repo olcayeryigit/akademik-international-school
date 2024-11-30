@@ -8,34 +8,37 @@ const data = [
     value: "15 Yıl+",
     label: "Eğitim Tecrübesi",
     color: '#FF5733', // Kırmızı
-    icon:"/images/home-page/info/3.svg"
+    icon:"/images/home-page/info/3.svg",
   },
   {
     value: "8.734+",
     label: "Toplam Kayıtlı Öğrenci",
     color: '#28A745', // Yeşil
-    icon:"/images/home-page/info/1.svg"
+    icon:"/images/home-page/info/1.svg",
 
   },
   {
     value: "732",
     label: "LGS'den 450+ Puan",
     color: '#3357FF', // Mavi
-    icon:"/images/home-page/info/5.svg"
+    icon:"/images/home-page/info/5.svg",
+
 
   },
   {
     value: "318",
     label: "YKS'den 450+ Puan",
     color: '#EAB308', // Sarı
-    icon:"/images/home-page/info/6.svg"
+    icon:"/images/home-page/info/6.svg",
+
 
   },
   {
     value: "1.802",
     label: "Hedef Üniversiteye Yerleşen",
     color: '#8E44AD', // Mor
-    icon:"/images/home-page/info/4.svg"
+    icon:"/images/home-page/info/4.svg",
+
 
   },
 ];
@@ -48,8 +51,8 @@ const School= () => {
         <div className="grid grid-cols-2 gap-2 md:gap-10">
           {data.map((item, index) => (
 
-            <div key={index} className="flex gap-2  bg-white bg-opacity-70  rounded-xl p-2">
-              <div className='bg-[#DFE8F0] bg-opacity-50 p-3 rounded-lg m-2'>
+            <div key={index} className="flex gap-2  bg-white bg-opacity-70  rounded-xl p-1 ">
+              <div className={`bg-[#DFE8F0] bg-opacity-50 p-2 rounded-lg m-2  `}>
               <div className='relative w-20 h-20 '>
                 <Image src={item.icon} fill className='object-contain' alt='icon' />
               </div>

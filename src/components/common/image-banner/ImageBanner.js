@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Redirect from '../banner-redirect/Redirect';
 
 const ImageBanner = ({ 
   src = '/default-image.jpg', // src için varsayılan bir görsel (mevcut değilse bunu ekleyin)
@@ -14,7 +15,8 @@ bg="bg-gradient-to-b from-[#080D16]/100 via-[#0A0F19]/95 via-[#0D121D]/80 via-[#
       <Image src="/images/kolej-gif.gif" width={200} height={200} className="absolute right-20 z-50 -bottom-20" alt='x' />
       <div className={`absolute inset-0 ${bg} rounded-bl-3xl rounded-br-3xl`}></div>
       <div className="container mx-auto pt-36 z-50 gap-16 space-y-6">
-        <h2 className="text-4xl pt-10 pb-2">{title}</h2>
+        <Redirect title={title} subTitle={subTitle}/>
+        <h2 className="text-4xl  pb-2">{title}</h2>
         {subTitle && <h1 className="text-4xl font-bold">{subTitle}</h1>}
       </div>
     </div>

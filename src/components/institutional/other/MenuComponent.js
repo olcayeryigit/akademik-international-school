@@ -51,9 +51,9 @@ const MenuComponent = () => {
   };
 
   return (
-    <div className="bg-gradient-to-l from-blue-50 to-gray-100 min-h-screen">
+    <div className="bg-gray-50  min-h-screen">
       <ImageBanner 
-        src="/50.png"
+        src="/images/50.png"
         title="Kurumsal"
         subTitle="Yemek Menüsü" 
         objectClass="object-top"
@@ -85,28 +85,32 @@ const MenuComponent = () => {
           {menus[activeMeal].map((week, weekIndex) => (
             <div key={weekIndex} className="mb-16">
               <h2 className="text-3xl font-semibold text-gray-700 mb-6">{week.week}</h2>
-              <table className="w-full table-auto border-separate space-y-4 rounded-lg shadow-lg bg-white">
-                <thead>
-                  <tr>
-                    <th className="p-6 text-left text-gray-600 font-medium bg-gray-200 rounded-t-lg">Tarih</th>
-                    <th className="p-6 text-left text-gray-600 font-medium bg-gray-200 rounded-t-lg">Menü</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {week.menu.map((day, dayIndex) => (
-                    <tr key={dayIndex} className="border-t border-gray-200 bg-gray-100 ">
-                      <td className="p-6 text-gray-600">{day.date}</td>
-                      <td className="p-6 text-gray-600">
-                        <ul className="list-disc list-inside text-sm">
-                          {day.dishes.map((dish, dishIndex) => (
-                            <li key={dishIndex} className="text-gray-700">{dish}</li>
-                          ))}
-                        </ul>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <table className="w-full table-auto border-separate space-y-4 rounded-lg shadow-lg bg-white overflow-hidden">
+  <thead>
+    <tr>
+      <th className="p-4 text-left text-gray-800 font-medium bg-gradient-to-r from-gray-100 to-gray-200">Tarih</th>
+      <th className="p-4 text-left text-gray-800 font-medium bg-gradient-to-r from-gray-100 to-gray-200">Menü</th>
+    </tr>
+  </thead>
+  <tbody>
+    {week.menu.map((day, dayIndex) => (
+      <tr 
+        key={dayIndex} 
+        className={`bg-stone-100 border-t border-gray-200 transition-colors`}
+      >
+        <td className="p-6 text-gray-700 font-medium">{day.date}</td>
+        <td className="p-6 text-gray-600">
+          <ul className="list-disc list-inside text-sm space-y-1">
+            {day.dishes.map((dish, dishIndex) => (
+              <li key={dishIndex} className="text-gray-700">{dish}</li>
+            ))}
+          </ul>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
             </div>
           ))}
         </div>

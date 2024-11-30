@@ -5,12 +5,12 @@ import Image from 'next/image'
 import React from 'react'
 
 
-const Logo = () => {
+const Logo = ({src}) => {
   return (
     <div className='flex items-center'>
     <div className="relative  h-[4rem] w-[10rem]  xl:h-[4.5rem] xl:w-[14rem]" >
     <Image 
-      src="/images/logos/main.svg" 
+      src={src}
       alt="" 
       fill 
       className="object-contain"  

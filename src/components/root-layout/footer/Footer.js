@@ -73,10 +73,12 @@ const Footer = () => {
        else if (currentPathname === "/services") {
       setBackgroundClass("bg-services");
     }
-    else if (currentPathname === "/kids-anaokulu"|| currentPathname=== "nasa-ilk-ve-ortaokul" || currentPathname=== "space-lise") {
-      setBackgroundClass("bg-gray-50");
+    else if (currentPathname === "kids-anaokulu"|| currentPathname=== "nasa-ilk-ve-ortaokul" || currentPathname=== "space-lise") {
+      setBackgroundClass("bg-gray-100");
     }
-     
+     else if(  currentPathname==="yemek-menusu" ){
+      setBackgroundClass("bg-gray-50")
+     }
     else {
       setBackgroundClass("bg-white");
     }
@@ -90,8 +92,8 @@ const Footer = () => {
 
 
 
-        <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 w-1/2 w-36 h-44 z-50'>
-<Image src="/images/kolej-gif.gif" fill className='object-contain' alt='x'/>
+    <div className='absolute -top-12 left-1/2 transform -translate-x-1/2 w-1/2 w-36 h-44 z-50'>
+    <Image src="/images/kolej-gif.gif" fill className='object-contain' alt='x'/>
 </div>
 
 

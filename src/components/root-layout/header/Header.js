@@ -172,6 +172,7 @@ const links = [
 const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [src, setSrc] = useState("/images/logos/main.svg");
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -203,6 +204,18 @@ const [isScrolled, setIsScrolled] = useState(false);
     };
   }, []);
 
+  useEffect(() => {
+ if(isScrolled){
+  setSrc("/images/logos/dark.svg")
+ }
+ if(!isScrolled){
+  setSrc("/images/logos/main.svg")
+
+ }
+  }, [isScrolled]);
+
+
+
   return (
     <header className={`fixed top-0 w-full transition-colors duration-300  ${isScrolled ? "bg-white shadow-lg text-black" : "lg:bg-transparent text-white "}`} style={{ zIndex: "999999" }}>
       <div className={`transition-all duration-1000 ease-in-out overflow-hidden ${isScrolled ? "opacity-0 max-h-0" : "opacity-100 max-h-20"}`}>
@@ -211,7 +224,9 @@ const [isScrolled, setIsScrolled] = useState(false);
 
       <div className="  container mx-auto flex justify-between items-center px-6 py-1">
         <div className="flex items-center space-x-4">
-          <Logo />
+
+          
+          <Logo src={src} />
         
         </div>
 

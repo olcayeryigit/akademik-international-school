@@ -17,7 +17,7 @@ p2:"Akademik Koleji, Akademik Yabancı Dil Kursları, The Academic Publishing Ya
 p3:"Yabancı Dil eğitiminde çeyrek asra yakın tecrübesiyle, bugüne dek binlerce öğrencisini hedeflerine ulaştıran Akademik Yabancı Dil Kurslarının, donanımlı yabancı dil programları ve özgün yayınları, artık Akademik Koleji öğrencilerimizin istifadesine sunuluyor. Kolej öğrencilerimiz İngilizcenin yanı sıra ikinci ve hatta üçüncü yabancı dil alanlarında yetkinlik kazanıyor.",
     }
   return (
-    <div className='bg-gradient-to-b from-white to-gray-100 py-6 md:py-10'>
+    <div className='bg-gradient-to-b from-white to-gray-100 py-6 md:py-28'>
     <div className='container mx-auto '>
             <SectionTitle
             title={content.title}

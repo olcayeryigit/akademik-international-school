@@ -60,7 +60,7 @@ const Students = () => {
   };
 
   return (
-    <div className="corner-shadow w-full rounded-xl mt-3 p-4" 
+    <div className="corner-shadow w-full rounded-xl mt-3 p-4 " 
    
     >
       <h2 className="text-xl font-bold  flex items-center text-black">

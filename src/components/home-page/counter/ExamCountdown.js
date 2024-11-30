@@ -29,7 +29,7 @@ const ExamCountdown = () => {
   };
 
   return (
-    <div className='bg-gradient-to-b from-amber-100/100 via-amber-50/80 to-white py-8 rounded-3xl '>
+    <div className='bg-gradient-to-l from-white to-gray-100 py-8 rounded-3xl '>
     <div className='container mx-auto my-16 '>
     <div className=" mx-2  rounded-3xl">
   

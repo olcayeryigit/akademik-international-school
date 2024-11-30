@@ -50,6 +50,7 @@ const Ilkokul = () => {
   subTitle={area.subTitle} 
   title="İlkokul Eğitimleri"
   iconSrc={area.iconSrc} 
+  objectClass='object-top'
 />
 <div className='container mx-auto py-12'>
           <h1 className="text-3xl font-bold text-[#1F2937] mb-6">{area.subTitle}</h1>
