@@ -77,7 +77,10 @@ const Footer = () => {
       setBackgroundClass("bg-gray-100");
     }
      else if(  currentPathname==="yemek-menusu" ){
-      setBackgroundClass("bg-gray-50")
+      setBackgroundClass("bg-gray-50");
+     }
+     else if(currentPathname===""){
+      setBackgroundClass("bg-[#FCFDFE]");
      }
     else {
       setBackgroundClass("bg-white");

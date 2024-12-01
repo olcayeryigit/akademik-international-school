@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
+import Redirect3 from '../banner-redirect-3/Redirect3';
 
 const ImageBanner = ({ 
   src = '/default-image.jpg', // src için varsayılan bir görsel (mevcut değilse bunu ekleyin)
@@ -14,7 +15,9 @@ bg="bg-gradient-to-b from-[#080D16]/100 via-[#0A0F19]/95 via-[#0D121D]/80 via-[#
       <Image src={src} alt="Banner Image" fill className={`object-cover ${objectClass} rounded-bl-3xl rounded-br-3xl`} />
       <div className={`absolute inset-0 ${bg} rounded-bl-3xl rounded-br-3xl`}></div>
       <div className="container mx-auto pt-36 z-50 gap-16 space-y-6">
-        <h2 className="text-4xl pt-10 pb-2">{title}</h2>
+      <Redirect3 title={title} subTitle={subTitle}/>
+
+        <h2 className="text-4xl  pb-2">{title}</h2>
         {subTitle && <h1 className="text-4xl font-bold">{subTitle}</h1>}
       </div>
       <div className='absolute top-60 w-[1200px] h-[300px] left-1/2 transform -translate-x-1/2'><Image src="/images/campuses/2.gif" fill className="object-contain "alt='x' />

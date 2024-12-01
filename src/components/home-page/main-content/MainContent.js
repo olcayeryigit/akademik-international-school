@@ -1,7 +1,7 @@
 "use client"
 import Slider from '@/components/home-page/main-content/slider/Slider';
 import React from 'react';
-import PreRegistrationForm from './pre-registration-form/PreRegistrationForm;';
+import PreRegistrationForm from './pre-registration-form/PreRegistrationForm';
 
 
 const MainContent = () => {

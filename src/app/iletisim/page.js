@@ -5,7 +5,7 @@ const page = () => {
   return (
   
 
-<div className="py-32 bg-gray-400">
+<div className="">
      <Contact/>
     </div>
    
